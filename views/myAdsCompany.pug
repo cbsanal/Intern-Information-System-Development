@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        // Header
+        include _head
+    body
+        // Header
+        include _headerCompany
+        .ilanWrapper
+            .ilanlarHeading
+                u İlanlarım
+            each ad in ads
+                .ilan
+                    .ilanHead
+                        b= ad.adName.toUpperCase()
+                    .ilanSirket
+                        b= ad.companyName.toUpperCase()
+                    a(href=`myAdsCompany/${ad.id}`)
+                        button.btn.adBtn &Idot;lan&imath; G&ouml;r&uuml;nt&uuml;le
+
+        script(src='/js/bundle.js')

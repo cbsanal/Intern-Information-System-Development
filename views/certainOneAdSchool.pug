@@ -1,0 +1,35 @@
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _headerSchool
+        each finalAd in finalAds
+            each ad in finalAd.ads
+                each student in finalAd.students
+                    .ilanCompanyWrapper(style="display:flex")   
+                        .ilanInfo
+                            .ilanHeading
+                                u Yetkili Kişi
+                            .ilanCompanyName= `Yetkili Adı: ${ad.yetkiliAdi}`
+                            .ilanName= `Yetkili Diploma No: ${ad.yetkiliDipNo}`
+                            .ilanName= `Yetkili Mezun Olunan Üniversite: ${ad.yetkiliUni}`
+                            .ilanName= `Yetkili Mezun Olunan Bölüm: ${ad.yetkiliBolum}`
+                            if finalAd.stajBasvuru
+                                form(action=`/api/v1/teacher/certainAdsSchool/${finalAd.id}` method="GET")
+                                    input.downloadCv(style="" type="submit" value="Staj Başarı Belgesi İndir")
+                            else
+                                b Dosya Henüz Yüklenmemiş
+                        .ilanInfo
+                            .ilanHeading
+                                u Öğrenci
+                            .ilanCompanyName= `Öğrenci Adı: ${student.name}`
+                            .ilanName= `Öğrenci No: ${student.studentNo}`
+                            .ilanName= `Öğrenci Sınıf: ${student.studentClass}`
+                            if finalAd.stajRapor
+                                form(action=`/api/v1/student/certainAdsSchool/${finalAd.id}` method="GET")
+                                    input.downloadCv(style="" type="submit" value="Staj Raporu İndir")
+                            else
+                                b Dosya Henüz Yüklenmemiş
+        script(src='/js/bundle.js')

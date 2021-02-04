@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="img-header">
+                <div class="logoWrapper">
+                    <img src="../img/logo.png" alt="gazi-logo">
+                </div>
+                <div class="logoHeader">
+                    <b>Gazi Üniversitesi Staj Sistemi</b>
+                </div>
+            </div>
+
+            <ul>
+                <li><a href="">İlanlarım</a></li>
+                <li><a href="">Yeni İlan Ver</a></li>
+                <li><a href="">Başvuranlar</a></li>
+                <button class="btn"><b>Çıkış</b></button>
+            </ul>
+        </nav>
+    </header>
+    <div class="yeniIlanHeader">
+        Yeni İlan Oluştur
+    </div>
+    <div class="ilanFormu">
+        <form action="">
+            <div class="yetkili-ilan">
+                <div class="yetkiliKisi">
+                    <div class="formHeader">
+                        Yetkili Kişi
+                    </div>
+                    <div class="formGroup"><label class="formLabel">Ad:</label><input class="formInput" id="yetkiliName"
+                            type="text" placeholder="Yetkili Kisinin Adı" required="required" />
+                    </div>
+                    <div class="formGroup"><label class="formLabel">Diploma Numarası:</label><input class="formInput"
+                            id="yetkiliName" type="text" placeholder="Yetkili Kisi Diploma Numarası"
+                            required="required" />
+                    </div>
+                    <div class="formGroup"><label class="formLabel">Mezun Olunan Üniversite:</label><input
+                            class="formInput" id="yetkiliName" type="text"
+                            placeholder="Yetkili Kisi Mezun Olunan Üniversite" required="required" />
+                    </div>
+                    <div class="formGroup"><label class="formLabel">Mezun Olunan Bölüm:</label><input class="formInput"
+                            id="yetkiliName" type="text" placeholder="Yetkili Kisi Mezun Olunan Bölüm"
+                            required="required" />
+                    </div>
+                </div>
+                <div class="ilan">
+                    <div class="formHeader">
+                        İlan
+                    </div>
+                    <div class="formGroup"><label class="formLabel">Şirket Adınız:</label><input class="formInput"
+                            id="yetkiliName" type="text" placeholder="Şirket Adı" required="required" />
+                    </div>
+                    <div class="formGroup"><label class="formLabel">İlan Başlığı:</label><input class="formInput"
+                            id="yetkiliName" type="text" placeholder="Staj İlanının Başlığı" required="required" />
+                    </div>
+                    <div class="formGroup"><label class="formLabel">İlan Açıklaması:</label><textarea class="formInput"
+                            name="" id="" cols="30" rows="10" placeholder="Staj İlanının Açıklaması"
+                            required="required"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="btnWrapper">
+                <button class="btn ilanOlustur"><b>İlan Oluştur</b></button>
+
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

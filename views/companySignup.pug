@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        .loginWrapper
+            .login(style='border: none;')
+                .formHeader
+                    b Staj Sistemi &Scedil;irket Kay&imath;t
+                form.signup-form-company
+                    .formGroup
+                        label.formLabel Kurum &Idot;smi:
+                        input(id="kurumAdı").formInput(type='text' placeholder='Adınızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel E-posta:
+                        input(id="kurumEposta").formInput(type='text' placeholder='Kurum E-posta Adresini Giriniz' required='required')
+                    .formGroup
+                        label.formLabel &Scedil;ifre:
+                        input(id="kurumSifre").formInput(type='text' placeholder='Şifrenizi Giriniz' required='required')
+                    button#companySignup.btn.btn-login Kay&imath;t Ol
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')

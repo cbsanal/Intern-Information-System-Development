@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _header
+
+        .ilanWrapper
+            .ilanlarHeading
+                u B&uuml;t&uuml;n &Idot;lanlar
+            each ad in ads
+                .ilan
+                    .ilanHead
+                        b= ad.adName.toUpperCase()
+                    .ilanSirket
+                        b= ad.companyName.toUpperCase()
+                    if(final === false)            
+                        a(href=`/ad/${ad.id}`)
+                            button.btn.adBtn &Idot;lan&imath; G&ouml;r&uuml;nt&uuml;le
+                    else
+                        a(href=`/ad/${ad.id}` style="pointer-events: none;")
+                            button.btn.adBtn Kesinleşmiş Stajınız Bulunmaktadır
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')
+

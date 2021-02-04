@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        // Header
+        include _head
+    body
+        // Header
+        include _headerCompany
+        .ilanWrapper
+            .ilanlarHeading
+                u Başvuranlar
+            each appliedAd in appliedAds
+                each ad in appliedAd.ads
+                    each student in appliedAd.students
+                        .ilan
+                            .ilanHead
+                                b= ad.adName.toUpperCase()
+                            .ilanSirket
+                                b= student.name.toUpperCase()
+                            if appliedAd.companyVerify === 0
+                                a(href=`appliedStudents/${appliedAd.id}`)
+                                    button.btn.adBtn(style="padding: 1.5rem 0") Öğrenciyi Görüntüle
+                            else
+                                button(style="cursor:default;padding: 1.5rem 0").btn.adBtn Öğrenci Kabul Edildi
+        script(src='/js/bundle.js')

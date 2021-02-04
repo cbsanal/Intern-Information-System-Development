@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        .loginWrapper
+            .login
+                .formHeader
+                    b Staj Sistemi Öğretmen Giri&scedil;i
+                form.login-form-teacher
+                    .formGroup
+                        label.formLabel(for='email') Email:
+                        input#teacherEmail.formInput(type='email' placeholder='Emailinizi Giriniz' required='required')
+                    .formGroup
+                        label.formLabel(for='password') &Scedil;ifre:
+                        input#teacherPassword.formInput(type='password' placeholder='Şifrenizi Giriniz' required='required')
+                    button.btn.btn-login Giri&scedil;
+                .teacher-company(style="text-align: left;")
+                    a(href='/')
+                        button.btn.btn-login.teacher-login Öğrenci
+                    a(href='/loginCompany')
+                        button.btn.btn-login.company-login Şirket
+            .signup
+                .formHeader
+                    b Staj Sistemi Kay&imath;t
+                .buttons
+                    a(href='/studentSignup')
+                        button#studentSignup.btn.btn-login.student-login
+                            | &Ouml;&gbreve;renci
+                            | Kay&imath;t
+                    a(href='/companySignup')
+                        button#companySignup.btn.btn-login.company-login
+                            | &Scedil;irket
+                            | Kay&imath;t
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')

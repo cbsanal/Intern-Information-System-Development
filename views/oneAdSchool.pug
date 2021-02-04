@@ -1,0 +1,38 @@
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _headerSchool
+        .ilanCompanyWrapper(style="display:flex")
+            each ad in appliedAd.ads
+                each student in appliedAd.students
+                    .ilanInfo
+                        .ilanHeading
+                            u &Idot;lan
+                        .ilanCompanyName= `Şirket Adı: ${ad.companyName}`
+                        .ilanName= `İlan Adı: ${ad.adName}`
+                        .ilanSum(style="margin-bottom: 0rem;")= `İlan Açıklaması:` 
+                        br
+                        .ilanSum(style="word-wrap: break-word")= `${ad.adSum}`
+                        //- button.applyAdBtn.btn(style='margin-top: 5rem;' data-ad-id=`${ad.id}`) &Idot;lana Ba&scedil;vur
+                    .ilanInfo
+                        .ilanHeading
+                            u Yetkili Kişi
+                        .ilanCompanyName= `Yetkili Adı: ${ad.yetkiliAdi}`
+                        .ilanName= `Yetkili Diploma No: ${ad.yetkiliDipNo}`
+                        .ilanName= `Yetkili Mezun Olunan Üniversite: ${ad.yetkiliUni}`
+                        .ilanName= `Yetkili Mezun Olunan Bölüm: ${ad.yetkiliBolum}`
+                        form(action=`/api/v1/teacher/waitingVerify/${ad.id}` method="GET")
+                            input.downloadCv(style="" type="submit" value="Diploma İndir")
+                    .ilanInfo
+                        .ilanHeading
+                            u Öğrenci
+                        .ilanCompanyName= `Öğrenci Adı: ${student.name}`
+                        .ilanName= `Öğrenci No: ${student.studentNo}`
+                        .ilanName= `Öğrenci Sınıf: ${student.studentClass}`
+        div(style="text-align:center")
+            button.btn.certainSchool(data-ad-id=`${appliedAd.id}`) Onayla
+            button.btn.denySchoolBtn(style="margin-left: 2rem;" data-ad-id=`${appliedAd.id}`) Reddet
+        script(src='/js/bundle.js')

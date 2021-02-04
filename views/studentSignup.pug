@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        .loginWrapper
+            .login(style='border: none;')
+                .formHeader
+                    b Staj Sistemi &Ouml;&gbreve;renci Kay&imath;t
+                form.signup-form-student
+                    .formGroup
+                        label.formLabel Ad:
+                        input(id="studentName").formInput(type='text' placeholder='Adınızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel &Ouml;&gbreve;renci Numaras&imath;:
+                        input(id="studentNo").formInput(type='text' placeholder='Öğrenci Numaranızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel Ortalama:
+                        input(id="studentAvg").formInput(type='text' placeholder='Okul Ortalamanızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel S&imath;n&imath;f:
+                        input(id="studentClass").formInput(type='text' placeholder='Sınıfınızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel E-posta:
+                        input(id="studentEposta").formInput(type='text' placeholder='Epostanızı Giriniz' required='required')
+                    .formGroup
+                        label.formLabel &Scedil;ifre:
+                        input(id="studentPass").formInput(type='password' placeholder='Şifrenizi Giriniz' required='required')
+                    button#studentSignup.btn.btn-login Kay&imath;t Ol
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')
+

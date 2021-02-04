@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        include _head
+    body
+        // Header
+        include _headerCompany
+        each student in appliedAd.students
+            .ilanInfo
+                .ilanHeading
+                    u Öğrenci
+                .ilanCompanyName= `Öğrenci Adı: ${student.name}`
+                .ilanName= `Öğrenci Ortalaması: ${student.studentAvg}`
+                .ilanName= `Öğrenci Sınıfı: ${student.studentClass}`
+                form(action=`/api/v1/company/appliedStudents/${appliedAd.id}` method="GET")
+                    input.downloadCv(style="" type="submit" value="CV İndir")
+                button.btn.certainStudentBtn(style='margin-top: 5rem;' data-ad-id=`${appliedAd.id}`) Öğrenciyi Kabul Et
+                button.btn.denyStudentBtn(style='margin-top: 5rem;margin-left:5rem;' data-ad-id=`${appliedAd.id}`) Öğrenciyi Reddet
+
+        //- button.downloadCv.btn(style="padding:1rem 2rem;display:block" data-ad-id=`${appliedAd.id}`) CV İndir
+        script(src='/js/bundle.js')

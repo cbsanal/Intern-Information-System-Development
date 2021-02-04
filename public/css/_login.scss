@@ -1,0 +1,91 @@
+.loginWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(../img/arkaPlan.jpg);
+
+    .login-form-student {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+
+        .formLabel {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .formInput {
+            margin-top: .5rem;
+            padding: 1rem 2rem;
+            width: 40rem;
+        }
+    }
+
+    .formHeader {
+        font-size: 3.2rem;
+        color: white;
+        font-style: 'Roboto', sans-serif;
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+}
+
+.btn-login {
+    background-color: black;
+    width: 40rem;
+    cursor: pointer;
+}
+
+.login {
+    border-right: 1px solid white;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .teacher-login {
+        margin-right: 4rem;
+    }
+}
+
+.teacher-login,
+.company-login {
+    width: 18rem;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+
+
+.teacher-company {
+    text-align: center;
+}
+
+.signup {
+    padding-left: 4rem;
+
+    .formHeader {
+        position: relative;
+        top: -5.15rem;
+    }
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #studentSignup,
+    #companySignup,
+    #schoolSignup {
+        width: 40rem;
+    }
+}

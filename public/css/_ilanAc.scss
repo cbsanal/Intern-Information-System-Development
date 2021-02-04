@@ -1,0 +1,55 @@
+.yetkili-ilan {
+    display: flex;
+}
+
+.btnWrapper {
+    text-align: center;
+    margin-top: 4.5rem;
+}
+
+.yeniIlanHeader {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 3rem;
+    text-decoration: underline;
+}
+
+.ilanFormu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    position: relative;
+    top: 2rem;
+
+    .yetkiliKisi {
+        border-right: 1px solid black;
+    }
+
+    .formHeader {
+        font-size: 2.5rem;
+        margin-left: 15rem;
+    }
+}
+
+.ilanOlusturBtn {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 15rem;
+
+    .formLabel {
+        font-size: 1.8rem;
+    }
+
+    .formInput {
+        margin-top: .5rem;
+        padding: 1rem 2rem;
+        width: 30rem;
+    }
+}

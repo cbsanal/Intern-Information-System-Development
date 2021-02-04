@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        include _head
+    body
+        // Header
+        include _headerCompany
+        .ilanInfo
+            .ilanHeading
+                u &Idot;lan
+            each finalAd in finalAds
+                each ad in finalAd.ads
+                    each student in finalAd.students
+                        .ilanCompanyName= `ilan Adı: ${ad.adName}`
+                        .ilanName= `Öğrenci Adı: ${student.name}`
+                        .ilanName= `Yetkili Adı: ${ad.yetkiliAdi}`
+                        //- form(action=`/api/v1/student/ad/${ad.id}` method="POST" enctype="multipart/form-data")
+                        form.uploadStajBasari( data-ad-id=`${finalAd.id}`)
+                            .uploadStajBasari.formGroup(style="width: 200px;margin: 0;")
+                                input(type='file' accept='.pdf' id='stajBasari' name='stajBasari' required='required')
+                                label(id="chooseFile" for='stajBasari') Staj Başarı Belgesini Yükle
+                                span(id="file-selected") Seçilen Dosya Yok
+                            button.btn.applyAdBtn(style='margin-top: 5rem;' data-ad-id=`${finalAd.id}`) Dosyayı Yükle
+        script(src='/js/bundle.js')

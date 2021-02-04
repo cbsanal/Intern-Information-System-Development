@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _headerCompany
+        .yeniIlanHeader
+            | Yeni &Idot;lan Olu&scedil;tur
+        .ilanFormu
+            form.ilanOlustur
+                .yetkili-ilan
+                    .yetkiliKisi
+                        .formHeader
+                            | Yetkili Ki&scedil;i
+                        .formGroup
+                            label.formLabel Ad:
+                            input#yetkiliAdi.formInput(type='text' placeholder='Yetkili Kisinin Adı' required='required')
+                        .formGroup
+                            label.formLabel Diploma Numaras&imath;:
+                            input#yetkiliDipNo.formInput(type='text' placeholder='Yetkili Kisi Diploma Numarası' required='required')
+                        .formGroup
+                            label.formLabel Mezun Olunan &Uuml;niversite:
+                            input#yetkiliUni.formInput(type='text' placeholder='Yetkili Kisi Mezun Olunan Üniversite' required='required')
+                        .formGroup
+                            label.formLabel Mezun Olunan B&ouml;l&uuml;m:
+                            input#yetkiliBolum.formInput(type='text' placeholder='Yetkili Kisi Mezun Olunan Bölüm' required='required')
+                        .uploadDiploma.formGroup
+                            input(type='file' accept='.pdf' id='diploma' name='diploma' required)
+                            label(id="chooseFile" for='diploma') Diploma Yükle (Zorunlu Alan-Pdf)
+                            span(id="file-selected") Seçilen Dosya Yok
+                    .ilan
+                        .formHeader
+                            | &Idot;lan
+                        .formGroup
+                            label.formLabel &Scedil;irket Ad&imath;n&imath;z:
+                            input#companyName.formInput(type='text' placeholder='Şirket Adı' required='required')
+                        .formGroup
+                            label.formLabel &Idot;lan Ba&scedil;l&imath;&gbreve;&imath;:
+                            input#adName.formInput(type='text' placeholder='Staj İlanının Başlığı' required='required')
+                        .formGroup
+                            label.formLabel &Idot;lan A&ccedil;&imath;klamas&imath;:
+                            textarea#adSum.formInput(name='' cols='30' rows='10' placeholder='Staj İlanının Açıklaması' required='required')
+                .btnWrapper
+                    button.btn.ilanOlusturBtn
+                        b &Idot;lan Olu&scedil;tur
+                .user-id(style="display:none")= user._id
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')

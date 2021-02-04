@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        // Header
+        include _head
+    body
+        // Header
+        include _headerCompany
+        .ilanWrapper
+            .ilanlarHeading
+                u Kesinleşen Stajlar
+            each finalAd in finalAds
+                each ad in finalAd.ads
+                    each student in finalAd.students
+                        .ilan
+                            .ilanHead
+                                b= ad.adName.toUpperCase()
+                            .ilanSirket
+                                b= student.name.toUpperCase()
+                            a(href=`certainAdsCompany/${finalAd.id}`)
+                                button.btn.adBtn &Idot;lan&imath; G&ouml;r&uuml;nt&uuml;le
+        script(src='/js/bundle.js')

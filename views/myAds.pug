@@ -1,0 +1,39 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _header
+        .ilanWrapper
+            .ilanlarHeading
+                u Başvurularım
+            each applyAd in applyAds
+                each ad in applyAd.ads
+                    .ilan
+                        .ilanHead
+                            b= ad.adName.toUpperCase()
+                        .ilanSirket
+                            b= ad.companyName.toUpperCase()
+                        if applyAd.studentVerify === 0
+                            a(href=`myAds/${applyAd.id}`)
+                                button.btn.adBtn &Idot;lan&imath; G&ouml;r&uuml;nt&uuml;le
+                        else if ((applyAd.studentVerify === 1) && (applyAd.companyVerify === 0))
+                            button(style="cursor: default;padding: 1.5rem 0").btn.adBtn Şirket Onayı Bekleniyor
+                        else if applyAd.companyVerify === 1
+                            button(style="cursor: default;padding: 1.5rem 0").btn.adBtn Şirket Onayladı, Hoca Onayı Bekleniyor
+                        else
+                            button(style="cursor: default;padding: 1.5rem 0").btn.adBtn Şirket Reddetti
+            //- each notApplyAd in notApplyAds
+            //-     .ilan
+            //-         .ilanHead
+            //-             b= notApplyAd.adName.toUpperCase()
+            //-         .ilanSirket
+            //-             b= notApplyAd.companyName.toUpperCase()
+            //-         a(href=`myAds/${notApplyAd.id}`)
+            //-             button.btn.adBtn &Idot;lan&imath; G&ouml;r&uuml;nt&uuml;le
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+            //- script(type="module" src='/js/index.js')
+        script(src='/js/bundle.js')
+

@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        include _head
+    body
+        // Header
+        include _header
+        .ilanInfo
+            .ilanHeading
+                u &Idot;lan
+            each ad in finalAd.ads
+                .ilanCompanyName= `Şirket Adı: ${ad.companyName}`
+                .ilanName= `İlan Adı: ${ad.adName}`
+                //- form(action=`/api/v1/student/ad/${ad.id}` method="POST" enctype="multipart/form-data")
+                form.uploadStajDosya( data-ad-id=`${finalAd.id}`)
+                    .uploadStajDosya.formGroup(style="width: 200px;margin: 0;")
+                        input(type='file' accept='.pdf' id='stajDosya' name='stajDosya' required='required')
+                        label(id="chooseFile" for='stajDosya') Staj Dosyasını Yükleyiniz
+                        span(id="file-selected") Seçilen Dosya Yok
+                    button.btn.applyAdBtn(style='margin-top: 5rem;' data-ad-id=`${finalAd.id}`) Dosyayı Yükle
+        script(src='/js/bundle.js')
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(type="module" src='/js/index.js')
+

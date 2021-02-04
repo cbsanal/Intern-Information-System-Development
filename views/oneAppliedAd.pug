@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        include _head
+    body
+        // Header
+        include _header
+        each ad in applyAd.ads
+            .ilanInfo
+                .ilanHeading
+                    u &Idot;lan
+                .ilanCompanyName= `Şirket Adı: ${ad.companyName}`
+                .ilanName= `İlan Adı: ${ad.adName}`
+                .ilanSum(style="margin-bottom: 0rem;")= `İlan Açıklaması:` 
+                br
+                .ilanSum(style="word-wrap: break-word")= `${ad.adSum}`
+                button.certainAdBtn.btn(style='margin-top: 5rem;' data-ad-id=`${applyAd.id}`) İlanı Kesinleştir
+        script(src='/js/bundle.js')

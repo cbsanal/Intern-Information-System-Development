@@ -1,0 +1,51 @@
+header {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    min-height: 10vh;
+
+    .logoWrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        padding: 1rem 3rem;
+
+        .img-header {
+            display: flex;
+            align-items: center;
+            flex: 1;
+
+            .logoHeader {
+                margin-left: 3rem;
+                font-size: 3rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            flex: 1;
+
+            li:hover {
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            color: black;
+            font-size: 2.1rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.btn {
+    padding: 1.5rem 3rem;
+    border: none;
+    color: white;
+    background-color: #2A457B;
+}

@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        // Head
+        include _head
+    body
+        // Header
+        include _header
+        .ilanWrapper
+            .ilanlarHeading
+                u Kesinleşen Stajım
+            each finalAd in finalAds
+                each ad in finalAd.ads
+                    .ilan
+                        .ilanHead
+                            b= ad.adName.toUpperCase()
+                        .ilanSirket
+                            b= ad.companyName.toUpperCase()
+                        a(href=`/finalAd/${finalAd.id}`)
+                            button.btn.adBtn İlan Kesinleştirildi
+        script(src='/js/bundle.js')
+
